@@ -12,7 +12,7 @@ binaryTree newTree(void){
     return tree;
 }
 
-binaryTree insertElemnt(binaryTree tree, int name, int position){
+binaryTree insertElementTree(binaryTree tree, int name, int position){
     if(tree == NULL) { 
         tree = calloc(1 ,sizeof(struct node));
         tree->left = NULL;
@@ -29,7 +29,7 @@ binaryTree insertElemnt(binaryTree tree, int name, int position){
     return tree;
 }
 
-int searchTree(binaryTree tree, int name) {
+int searchPositionElement(binaryTree tree, int name) {
     int position = -1;
     if (tree != NULL){
         if (tree->name == name) {

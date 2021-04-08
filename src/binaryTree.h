@@ -13,12 +13,12 @@ typedef struct node *binaryTree;
 binaryTree newTree(void);
 
 // Inserta un elemento al arbol.
-binaryTree insertElemnt(binaryTree tree, int e1, int e2);
+binaryTree insertElementTree(binaryTree tree, int element1, int element2);
+
+// buscar retorna la posicion de element. Si no existe retorna -1 
+int searchPositionElement(binaryTree tree, int element);
 
 // Libera la memoria de un arbol.
 binaryTree destroyTree(binaryTree tree);
-
-// buscar retorna la posicion de element. Si no existe retorna -1 
-int searchTree(binaryTree tree, int element);
 
 #endif
