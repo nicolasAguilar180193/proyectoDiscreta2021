@@ -4,16 +4,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
+#include <assert.h>
 
 
 #include "GrafoSt21.h"
+#include "hash.h"
+#include "list.h"
+#include "constantes.h"
 
 //Grafo es un puntero a una estructura, la cual debe estar definida en el .h de arriba
 //u32 tambien debe estar definida arriba
 
 typedef GrafoSt *Grafo;
-typedef unsigned int u32;
 
 
 //construcci'on/destrucci'on

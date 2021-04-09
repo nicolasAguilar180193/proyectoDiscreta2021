@@ -21,9 +21,9 @@ binaryTree insertElementTree(binaryTree tree, int name, int position){
         tree->position = position;
     } else {
         if (tree->name < name){
-            tree->left = insertElemnt(tree->left, name, position);
+            tree->left = insertElementTree(tree->left, name, position);
         } else {
-            tree->right = insertElemnt(tree->right, name, position);
+            tree->right = insertElementTree(tree->right, name, position);
         }
     }
     return tree;
@@ -36,9 +36,9 @@ int searchPositionElement(binaryTree tree, int name) {
             position = tree->position;
         }
         else if (tree->name < name) {
-            searchTree(tree->left , name);
+            searchPositionElement(tree->left , name);
         } else {
-            searchTree(tree->right, name);
+            searchPositionElement(tree->right, name);
         }
     }
     return position;

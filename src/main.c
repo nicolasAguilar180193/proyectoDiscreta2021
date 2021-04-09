@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include "RomaVictor.h"
 
-int main(int argc, char *argv[]){
+int main(){
     printf("\n\n Hola mundo! \n\n");
 
-    // test();
     ConstruccionDelGrafo();
-    
+
     return 0;
 }
