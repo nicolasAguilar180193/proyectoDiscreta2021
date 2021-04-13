@@ -3,7 +3,7 @@
 
 bool checkFormat(int i) {
     if (i != 2) {
-        // printf("Error de formato del archivo.\n");
+        printf("Error de formato del archivo.\n");
         return false;
     }
     return true;
@@ -91,14 +91,6 @@ Grafo ConstruccionDelGrafo() {
         return NULL;
     }
 
-    // u32 vecinos[m*2];
-    // G->verticesecinos = vecinos;
-
-    // G->verticesecinos[0] = 2;
-
-    // // printf("el primer vecino %d es %d", 0, G->verticesecinos[0]);
-    // // printf("\n");
-
     hashTable hash = newHash(n); //Hash para optimizar la carga.
 
     u32 verticesCargados = 0;
@@ -118,47 +110,35 @@ Grafo ConstruccionDelGrafo() {
             // Ninguno de los vertices fue agregado
             if (posicionVertice1 == NOT_ADDED && posicionVertice2 == NOT_ADDED)
             {
-                // // printf("if 1 \n");
                 posicionVertice1 = verticesCargados;
                 posicionVertice2 = verticesCargados + 1;
                 G = AgegarVertice(G, x, posicionVertice1);
                 hash = insertElemntHash(hash, x, posicionVertice1);
-                // printf("Vertice numero???????: %d \n", verticesCargados );
                 G = AgegarVecino(G, posicionVertice1 , posicionVertice2);
 
                 G = AgegarVertice(G, y, posicionVertice2);
-                // printf("Vertice numereeeee: %d \n", verticesCargados );
                 hash = insertElemntHash(hash, y, posicionVertice2);
                 G = AgegarVecino(G, posicionVertice2 , posicionVertice1);
                 verticesCargados++;
                 verticesCargados++;
-            }
-            // posicionVertice1 fue agregado posicionVertice2 no
-            else if (posicionVertice1 != NOT_ADDED && posicionVertice2 == NOT_ADDED)
+            } else if (posicionVertice1 != NOT_ADDED && posicionVertice2 == NOT_ADDED)
             {
-                // // printf("if 2 \n");
                 posicionVertice2 = verticesCargados;
                 G = AgegarVertice(G, y, posicionVertice2);
                 hash = insertElemntHash(hash, y, posicionVertice2);
                 G = AgegarVecino(G, posicionVertice2, posicionVertice1);
                 G = AgegarVecino(G, posicionVertice1, posicionVertice2);
                 verticesCargados++;
-            }
-            // posicionVertice1 no fue agregado pos 2 si
-            else if (posicionVertice1 == NOT_ADDED && posicionVertice2 != NOT_ADDED)
+            } else if (posicionVertice1 == NOT_ADDED && posicionVertice2 != NOT_ADDED)
             {
-                // // printf("if 3 \n");
                 posicionVertice1 = verticesCargados;
                 G = AgegarVertice(G, x, posicionVertice1);
                 hash = insertElemntHash(hash, x, posicionVertice1);
                 G = AgegarVecino(G, posicionVertice1, posicionVertice2);
                 G = AgegarVecino(G, posicionVertice2, posicionVertice1);
                 verticesCargados++;
-            }
-            // ambos ya fueron agregados
-            else if (posicionVertice1 != NOT_ADDED && posicionVertice2 != NOT_ADDED)
+            } else if (posicionVertice1 != NOT_ADDED && posicionVertice2 != NOT_ADDED)
             {
-                // // printf("if 4 \n");
                 G = AgegarVecino(G, posicionVertice1, posicionVertice2);
                 G = AgegarVecino(G, posicionVertice2, posicionVertice1);
             }
