@@ -36,9 +36,9 @@ int searchPositionElement(binaryTree tree, int name) {
             position = tree->position;
         }
         else if (tree->name < name) {
-            searchPositionElement(tree->left , name);
+            position = searchPositionElement(tree->left , name);
         } else {
-            searchPositionElement(tree->right, name);
+            position = searchPositionElement(tree->right, name);
         }
     }
     return position;

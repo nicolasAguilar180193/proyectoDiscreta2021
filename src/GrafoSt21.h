@@ -8,9 +8,8 @@ typedef struct VerticeSt{
     u32 nombre;
     u32 color;
     u32 grado;
-    u32 etiqueta; //Etiqueta del vertice (igual al indice en el arreglo principal)
-    list_t vecinos;
-    // u32 primerVecino;
+    u32 etiqueta;
+    u32 *vecinos;
 } VerticeSt;
 
 typedef VerticeSt* Vertice;
@@ -19,11 +18,8 @@ typedef struct GrafoSt {
     u32 cantidadVertices;
     u32 cantidadLados;
     Vertice vertices;
-    // u32 *vecinos; // array de todos los vecinos de todos los vertices
+    Vertice *orden;
 } GrafoSt;
-
-
-
 
 
 

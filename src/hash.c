@@ -9,9 +9,6 @@ struct hashTableSt {
 
 hashTable newHash(int length){
     hashTable hash = calloc(1, sizeof(struct hashTableSt));
-    if (length % 2 == 0) {
-        length = length - 1;
-    }
     hash->array = calloc(length, sizeof(binaryTree));
     hash->length = length;
     return hash;
